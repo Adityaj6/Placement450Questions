@@ -19,6 +19,8 @@ public class chechPalin {
             System.out.println("Yes it is a palindrome");
         } else {
             System.out.println("Not a palindrome");
+
+            // testing the connections
         }
     }
 }
