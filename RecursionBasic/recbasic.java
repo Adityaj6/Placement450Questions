@@ -70,9 +70,36 @@ public class recbasic {
         return n * fact(n - 1);
     }
 
+    public static void reverseArray(int arr1[], int start, int end) {
+        if (start < end) {
+            int temp = arr1[start];
+            arr1[start] = arr1[end];
+            arr1[end] = temp;
+            reverseArray(arr1, start + 1, end - 1);
+        }
+    }
+
+    public static void printArray(int arr[], int n) {
+        System.out.print("Reversed array is:- \n");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static boolean palindrome(String s, int i) {
+        int n = s.length();
+        if (i >= n / 2) {
+            return true;
+        }
+        if (s.charAt(i) != s.charAt(n - i - 1)) {
+            return false;
+        }
+        return palindrome(s, i + 1);
+    }
+
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
-        int n = read.nextInt();
+        // int n = read.nextInt();
         // print();
 
         // Print name n times
@@ -95,5 +122,15 @@ public class recbasic {
 
         // factorial of n number
         // System.out.println(fact(n));
+
+        // reversee and array
+        // int arr1[] = { 1, 3, 4, 5, 6, 7 };
+        // printArray(arr1, arr1.length);
+        // reverseArray(arr1, 0, arr1.length - 1);
+        // printArray(arr1, arr1.length);
+
+        // check if a string is a plaindrome or not
+        String s = read.nextLine();
+        System.out.println(palindrome(s, 0));
     }
 }
