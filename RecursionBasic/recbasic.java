@@ -97,9 +97,18 @@ public class recbasic {
         return palindrome(s, i + 1);
     }
 
+    public static int fib(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int last = fib(n - 1);
+        int slast = fib(n - 2);
+        return last + slast;
+    }
+
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
-        // int n = read.nextInt();
+        int n = read.nextInt();
         // print();
 
         // Print name n times
@@ -130,7 +139,10 @@ public class recbasic {
         // printArray(arr1, arr1.length);
 
         // check if a string is a plaindrome or not
-        String s = read.nextLine();
-        System.out.println(palindrome(s, 0));
+        // String s = read.nextLine();
+        // System.out.println(palindrome(s, 0));
+
+        // fibonacci series
+        System.out.println((fib(n)));
     }
 }
